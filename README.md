@@ -1,4 +1,4 @@
-# Spanish Verb Conjugation Practice 🎯
+# PractiVerbo 🎯
 
 A fun and interactive web application for practicing Spanish verb conjugation, inspired by Duolingo's engaging learning approach.
 
