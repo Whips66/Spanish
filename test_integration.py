@@ -91,15 +91,19 @@ class TestIntegration(unittest.TestCase):
     
     def test_options_are_all_different(self):
         """Test that the 4 options in a question are unique"""
-        for _ in range(10):
+        for _ in range(20):
             response = self.client.get('/api/question')
             data = json.loads(response.data)
             
             options = data['options']
             unique_options = set(options)
             
-            # All 4 options should be unique
-            self.assertEqual(len(unique_options), len(options))
+            # All options should be unique
+            # Note: For identify-pronoun, we have 6 pronouns so can always get 4 unique
+            # For identify-tense, we have 7 tenses so can always get 4 unique
+            # For conjugation, we have many conjugations so should get 4 unique
+            self.assertEqual(len(unique_options), len(options), 
+                           f"Duplicate options in {data['question_type']} question")
     
     def test_wrong_answer_shows_correct_one(self):
         """Test that wrong answers return the correct answer"""

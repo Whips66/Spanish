@@ -58,6 +58,36 @@ async function loadQuestion() {
                 existingConjugated.remove();
             }
             questionSection.appendChild(conjugatedDisplay);
+        } else if (currentQuestion.question_type === 'identify-pronoun') {
+            // Identify pronoun question
+            tenseBadgeEl.textContent = currentQuestion.tense_name;
+            tenseBadgeEl.style.background = 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)';
+            
+            // Show conjugated form in question
+            document.querySelector('.question h2').textContent = 'Which pronoun is this conjugation for?';
+            
+            // Create a special display for the conjugated form
+            const conjugatedDisplay = document.createElement('div');
+            conjugatedDisplay.className = 'conjugated-display';
+            conjugatedDisplay.style.fontSize = '2rem';
+            conjugatedDisplay.style.fontWeight = 'bold';
+            conjugatedDisplay.style.color = '#00a8cc';
+            conjugatedDisplay.style.padding = '20px';
+            conjugatedDisplay.style.background = '#f0faff';
+            conjugatedDisplay.style.borderRadius = '10px';
+            conjugatedDisplay.style.marginTop = '15px';
+            conjugatedDisplay.textContent = currentQuestion.conjugated_form;
+            
+            // Clear pronoun element and add conjugated form there
+            const questionSection = document.querySelector('.question');
+            const existingConjugated = questionSection.querySelector('.conjugated-display');
+            if (existingConjugated) {
+                existingConjugated.remove();
+            }
+            questionSection.appendChild(conjugatedDisplay);
+            
+            // Hide pronoun display since that's what they're guessing
+            pronounEl.textContent = '?';
         } else {
             // Standard conjugation question
             tenseBadgeEl.textContent = currentQuestion.tense_english;
@@ -194,6 +224,8 @@ function showFeedback(isCorrect, result = {}) {
     if (!isCorrect) {
         if (currentQuestion.question_type === 'identify-tense') {
             message += ` Correct tense: ${currentQuestion.correct_answer}`;
+        } else if (currentQuestion.question_type === 'identify-pronoun') {
+            message += ` Correct pronoun: ${currentQuestion.correct_answer}`;
         } else {
             message += ` Correct answer: ${currentQuestion.correct_answer}`;
         }

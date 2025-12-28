@@ -87,7 +87,7 @@ class TestFlaskRoutes(unittest.TestCase):
         
         # Check question type exists
         self.assertIn('question_type', data)
-        self.assertIn(data['question_type'], ['conjugation', 'identify-tense'])
+        self.assertIn(data['question_type'], ['conjugation', 'identify-tense', 'identify-pronoun'])
         
         # Check verb is from our database
         self.assertIn(data['verb'], VERBS)
@@ -120,6 +120,18 @@ class TestFlaskRoutes(unittest.TestCase):
             # Options should be tense names
             for option in data['options']:
                 self.assertIn(option, TENSE_NAMES.values())
+        
+        elif data['question_type'] == 'identify-pronoun':
+            # Identify pronoun question checks
+            self.assertIn('conjugated_form', data)
+            self.assertIn(data['tense'], TENSES)
+            
+            # Correct answer should be a pronoun
+            self.assertIn(data['correct_answer'], PRONOUNS)
+            
+            # Options should be pronouns
+            for option in data['options']:
+                self.assertIn(option, PRONOUNS)
     
     def test_question_randomness(self):
         """Test that questions are randomized"""
@@ -249,9 +261,10 @@ class TestIdentifyTenseQuestions(unittest.TestCase):
             data = json.loads(response.data)
             question_types.add(data['question_type'])
         
-        # Both question types should appear
+        # All three question types should appear
         self.assertIn('conjugation', question_types)
         self.assertIn('identify-tense', question_types)
+        self.assertIn('identify-pronoun', question_types)
     
     def test_identify_tense_structure(self):
         """Test identify-tense question has correct structure"""
@@ -287,21 +300,33 @@ class TestIdentifyTenseQuestions(unittest.TestCase):
                 break
     
     def test_identify_tense_frequency(self):
-        """Test that identify-tense appears approximately 25% of the time"""
-        iterations = 200
+        """Test that each question type appears approximately 33% of the time"""
+        iterations = 300
         identify_tense_count = 0
+        identify_pronoun_count = 0
+        conjugation_count = 0
         
         for _ in range(iterations):
             response = self.client.get('/api/question')
             data = json.loads(response.data)
             if data['question_type'] == 'identify-tense':
                 identify_tense_count += 1
+            elif data['question_type'] == 'identify-pronoun':
+                identify_pronoun_count += 1
+            else:
+                conjugation_count += 1
         
-        frequency = identify_tense_count / iterations
+        tense_freq = identify_tense_count / iterations
+        pronoun_freq = identify_pronoun_count / iterations
+        conjugation_freq = conjugation_count / iterations
         
-        # Should be around 25% (allow 10-40% due to randomness)
-        self.assertGreater(frequency, 0.10)
-        self.assertLess(frequency, 0.40)
+        # Each should be around 33% (allow 20-46% due to randomness)
+        self.assertGreater(tense_freq, 0.20)
+        self.assertLess(tense_freq, 0.46)
+        self.assertGreater(pronoun_freq, 0.20)
+        self.assertLess(pronoun_freq, 0.46)
+        self.assertGreater(conjugation_freq, 0.20)
+        self.assertLess(conjugation_freq, 0.46)
 
 
 if __name__ == '__main__':

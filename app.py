@@ -48,8 +48,14 @@ def get_question():
     
     correct_answer = verb_data[tense][pronoun]
     
-    # 25% of the time, ask to identify the tense instead of conjugating
-    question_type = 'identify-tense' if random.random() < 0.25 else 'conjugation'
+    # Randomly select question type: 33% each
+    rand = random.random()
+    if rand < 0.33:
+        question_type = 'identify-tense'
+    elif rand < 0.66:
+        question_type = 'identify-pronoun'
+    else:
+        question_type = 'conjugation'
     
     if question_type == 'identify-tense':
         # Show conjugated verb, ask for the tense
@@ -79,6 +85,33 @@ def get_question():
             'tense': tense,
             'options': all_options,
             'correct_answer': correct_tense_name
+        })
+    elif question_type == 'identify-pronoun':
+        # Show conjugated verb, ask for the pronoun
+        # Generate options with pronouns
+        correct_pronoun = pronoun
+        
+        # Get 3 wrong pronouns
+        wrong_pronouns = [p for p in PRONOUNS if p != correct_pronoun]
+        wrong_pronouns = random.sample(wrong_pronouns, min(3, len(wrong_pronouns)))
+        
+        # Combine and shuffle
+        all_options = [correct_pronoun] + wrong_pronouns
+        random.shuffle(all_options)
+        
+        # Ensure all options are unique
+        all_options = list(dict.fromkeys(all_options))
+        
+        return jsonify({
+            'question_type': 'identify-pronoun',
+            'verb': verb_infinitive,
+            'english': verb_data['english'],
+            'tense': tense,
+            'tense_name': TENSE_NAMES[tense],
+            'conjugated_form': correct_answer,
+            'pronoun': pronoun,
+            'options': all_options,
+            'correct_answer': correct_pronoun
         })
     else:
         # Standard conjugation question
