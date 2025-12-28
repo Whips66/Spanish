@@ -48,12 +48,14 @@ def get_question():
     
     correct_answer = verb_data[tense][pronoun]
     
-    # Randomly select question type: 33% each
+    # Randomly select question type: 25% each
     rand = random.random()
-    if rand < 0.33:
+    if rand < 0.25:
         question_type = 'identify-tense'
-    elif rand < 0.66:
+    elif rand < 0.50:
         question_type = 'identify-pronoun'
+    elif rand < 0.75:
+        question_type = 'identify-infinitive'
     else:
         question_type = 'conjugation'
     
@@ -112,6 +114,34 @@ def get_question():
             'pronoun': pronoun,
             'options': all_options,
             'correct_answer': correct_pronoun
+        })
+    elif question_type == 'identify-infinitive':
+        # Show conjugated verb, ask for the infinitive
+        # Generate options with verb infinitives
+        correct_infinitive = verb_infinitive
+        
+        # Get 3 wrong infinitives
+        all_verbs = list(VERBS.keys())
+        wrong_infinitives = [v for v in all_verbs if v != correct_infinitive]
+        wrong_infinitives = random.sample(wrong_infinitives, min(3, len(wrong_infinitives)))
+        
+        # Combine and shuffle
+        all_options = [correct_infinitive] + wrong_infinitives
+        random.shuffle(all_options)
+        
+        # Ensure all options are unique
+        all_options = list(dict.fromkeys(all_options))
+        
+        return jsonify({
+            'question_type': 'identify-infinitive',
+            'verb': verb_infinitive,
+            'english': verb_data['english'],
+            'tense': tense,
+            'tense_name': TENSE_NAMES[tense],
+            'pronoun': pronoun,
+            'conjugated_form': correct_answer,
+            'options': all_options,
+            'correct_answer': correct_infinitive
         })
     else:
         # Standard conjugation question

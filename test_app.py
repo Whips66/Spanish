@@ -87,7 +87,7 @@ class TestFlaskRoutes(unittest.TestCase):
         
         # Check question type exists
         self.assertIn('question_type', data)
-        self.assertIn(data['question_type'], ['conjugation', 'identify-tense', 'identify-pronoun'])
+        self.assertIn(data['question_type'], ['conjugation', 'identify-tense', 'identify-pronoun', 'identify-infinitive'])
         
         # Check verb is from our database
         self.assertIn(data['verb'], VERBS)
@@ -132,6 +132,19 @@ class TestFlaskRoutes(unittest.TestCase):
             # Options should be pronouns
             for option in data['options']:
                 self.assertIn(option, PRONOUNS)
+        
+        elif data['question_type'] == 'identify-infinitive':
+            # Identify infinitive question checks
+            self.assertIn('conjugated_form', data)
+            self.assertIn(data['tense'], TENSES)
+            self.assertIn(data['pronoun'], PRONOUNS)
+            
+            # Correct answer should be a verb infinitive
+            self.assertIn(data['correct_answer'], VERBS.keys())
+            
+            # Options should be verb infinitives
+            for option in data['options']:
+                self.assertIn(option, VERBS.keys())
     
     def test_question_randomness(self):
         """Test that questions are randomized"""
@@ -254,17 +267,18 @@ class TestIdentifyTenseQuestions(unittest.TestCase):
         self.client = self.app.test_client()
     
     def test_identify_tense_appears(self):
-        """Test that identify-tense questions appear"""
+        """Test that all question types appear"""
         question_types = set()
-        for _ in range(100):
+        for _ in range(150):
             response = self.client.get('/api/question')
             data = json.loads(response.data)
             question_types.add(data['question_type'])
         
-        # All three question types should appear
+        # All four question types should appear
         self.assertIn('conjugation', question_types)
         self.assertIn('identify-tense', question_types)
         self.assertIn('identify-pronoun', question_types)
+        self.assertIn('identify-infinitive', question_types)
     
     def test_identify_tense_structure(self):
         """Test identify-tense question has correct structure"""
@@ -300,10 +314,11 @@ class TestIdentifyTenseQuestions(unittest.TestCase):
                 break
     
     def test_identify_tense_frequency(self):
-        """Test that each question type appears approximately 33% of the time"""
-        iterations = 300
+        """Test that each question type appears approximately 25% of the time"""
+        iterations = 400
         identify_tense_count = 0
         identify_pronoun_count = 0
+        identify_infinitive_count = 0
         conjugation_count = 0
         
         for _ in range(iterations):
@@ -313,20 +328,25 @@ class TestIdentifyTenseQuestions(unittest.TestCase):
                 identify_tense_count += 1
             elif data['question_type'] == 'identify-pronoun':
                 identify_pronoun_count += 1
+            elif data['question_type'] == 'identify-infinitive':
+                identify_infinitive_count += 1
             else:
                 conjugation_count += 1
         
         tense_freq = identify_tense_count / iterations
         pronoun_freq = identify_pronoun_count / iterations
+        infinitive_freq = identify_infinitive_count / iterations
         conjugation_freq = conjugation_count / iterations
         
-        # Each should be around 33% (allow 20-46% due to randomness)
-        self.assertGreater(tense_freq, 0.20)
-        self.assertLess(tense_freq, 0.46)
-        self.assertGreater(pronoun_freq, 0.20)
-        self.assertLess(pronoun_freq, 0.46)
-        self.assertGreater(conjugation_freq, 0.20)
-        self.assertLess(conjugation_freq, 0.46)
+        # Each should be around 25% (allow 15-35% due to randomness)
+        self.assertGreater(tense_freq, 0.15)
+        self.assertLess(tense_freq, 0.35)
+        self.assertGreater(pronoun_freq, 0.15)
+        self.assertLess(pronoun_freq, 0.35)
+        self.assertGreater(infinitive_freq, 0.15)
+        self.assertLess(infinitive_freq, 0.35)
+        self.assertGreater(conjugation_freq, 0.15)
+        self.assertLess(conjugation_freq, 0.35)
 
 
 class TestIdentifyPronounQuestions(unittest.TestCase):
@@ -388,6 +408,67 @@ class TestIdentifyPronounQuestions(unittest.TestCase):
         
         # Should see multiple different pronouns
         self.assertGreater(len(pronouns_seen), 3)
+
+
+class TestIdentifyInfinitiveQuestions(unittest.TestCase):
+    """Test the identify-infinitive question type"""
+    
+    def setUp(self):
+        """Set up test client"""
+        self.app = app
+        self.app.config['TESTING'] = True
+        self.client = self.app.test_client()
+    
+    def test_identify_infinitive_structure(self):
+        """Test identify-infinitive question has correct structure"""
+        # Get multiple questions until we find an identify-infinitive one
+        for _ in range(50):
+            response = self.client.get('/api/question')
+            data = json.loads(response.data)
+            
+            if data['question_type'] == 'identify-infinitive':
+                # Check required fields
+                self.assertIn('verb', data)
+                self.assertIn('english', data)
+                self.assertIn('tense', data)
+                self.assertIn('tense_name', data)
+                self.assertIn('pronoun', data)
+                self.assertIn('conjugated_form', data)
+                self.assertIn('options', data)
+                self.assertIn('correct_answer', data)
+                
+                # Check that conjugated form is valid
+                verb_data = VERBS[data['verb']]
+                expected_form = verb_data[data['tense']][data['pronoun']]
+                self.assertEqual(data['conjugated_form'], expected_form)
+                
+                # Check options are verb infinitives
+                for option in data['options']:
+                    self.assertIn(option, VERBS.keys())
+                
+                # Check correct answer is the verb
+                self.assertEqual(data['correct_answer'], data['verb'])
+                self.assertIn(data['correct_answer'], VERBS.keys())
+                
+                # Check we have 4 unique verb options
+                self.assertEqual(len(data['options']), 4)
+                self.assertEqual(len(set(data['options'])), 4)
+                
+                break
+    
+    def test_identify_infinitive_coverage(self):
+        """Test that multiple verbs can appear as correct answers"""
+        verbs_seen = set()
+        
+        for _ in range(100):
+            response = self.client.get('/api/question')
+            data = json.loads(response.data)
+            
+            if data['question_type'] == 'identify-infinitive':
+                verbs_seen.add(data['correct_answer'])
+        
+        # Should see multiple different verbs
+        self.assertGreater(len(verbs_seen), 5)
 
 
 if __name__ == '__main__':

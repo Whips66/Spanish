@@ -88,6 +88,36 @@ async function loadQuestion() {
             
             // Hide pronoun display since that's what they're guessing
             pronounEl.textContent = '?';
+        } else if (currentQuestion.question_type === 'identify-infinitive') {
+            // Identify infinitive question
+            tenseBadgeEl.textContent = currentQuestion.tense_name;
+            tenseBadgeEl.style.background = 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)';
+            
+            // Show conjugated form in question
+            document.querySelector('.question h2').textContent = 'What is the infinitive of this verb?';
+            
+            // Create a special display for the conjugated form
+            const conjugatedDisplay = document.createElement('div');
+            conjugatedDisplay.className = 'conjugated-display';
+            conjugatedDisplay.style.fontSize = '2rem';
+            conjugatedDisplay.style.fontWeight = 'bold';
+            conjugatedDisplay.style.color = '#d83f87';
+            conjugatedDisplay.style.padding = '20px';
+            conjugatedDisplay.style.background = '#fff5f8';
+            conjugatedDisplay.style.borderRadius = '10px';
+            conjugatedDisplay.style.marginTop = '15px';
+            conjugatedDisplay.textContent = currentQuestion.conjugated_form;
+            
+            // Clear pronoun element and add conjugated form there
+            const questionSection = document.querySelector('.question');
+            const existingConjugated = questionSection.querySelector('.conjugated-display');
+            if (existingConjugated) {
+                existingConjugated.remove();
+            }
+            questionSection.appendChild(conjugatedDisplay);
+            
+            // Show pronoun for context
+            pronounEl.textContent = currentQuestion.pronoun;
         } else {
             // Standard conjugation question
             tenseBadgeEl.textContent = currentQuestion.tense_english;
@@ -226,6 +256,8 @@ function showFeedback(isCorrect, result = {}) {
             message += ` Correct tense: ${currentQuestion.correct_answer}`;
         } else if (currentQuestion.question_type === 'identify-pronoun') {
             message += ` Correct pronoun: ${currentQuestion.correct_answer}`;
+        } else if (currentQuestion.question_type === 'identify-infinitive') {
+            message += ` Correct verb: ${currentQuestion.correct_answer} (${currentQuestion.english})`;
         } else {
             message += ` Correct answer: ${currentQuestion.correct_answer}`;
         }
