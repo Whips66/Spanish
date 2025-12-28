@@ -6,6 +6,18 @@ let bestStreak = 0;
 let questionsAnswered = 0;
 let isAnswered = false;
 
+// Session state
+const SESSION_LENGTH = 20;
+let sessionActive = false;
+let sessionQuestions = 0;
+let sessionCorrect = 0;
+let sessionIncorrect = 0;
+let sessionData = {
+    tenseErrors: {},
+    questionTypeErrors: {},
+    verbErrors: {}
+};
+
 // DOM elements
 const infinitiveEl = document.getElementById('infinitive');
 const englishEl = document.getElementById('english');
@@ -22,6 +34,11 @@ const mascotEl = document.getElementById('mascot');
 
 // Load a new question
 async function loadQuestion() {
+    // Check if session is complete
+    if (sessionActive && sessionQuestions >= SESSION_LENGTH) {
+        return; // Don't load more questions
+    }
+    
     try {
         const response = await fetch('/api/question');
         currentQuestion = await response.json();
@@ -243,6 +260,27 @@ async function selectAnswer(answer, button) {
     // Show next button
     nextBtnEl.style.display = 'block';
     questionsAnswered++;
+    
+    // Track session progress
+    if (sessionActive) {
+        sessionQuestions++;
+        if (isCorrect) {
+            sessionCorrect++;
+        } else {
+            sessionIncorrect++;
+            // Track errors by tense, question type, and verb
+            if (currentQuestion.tense) {
+                sessionData.tenseErrors[currentQuestion.tense] = (sessionData.tenseErrors[currentQuestion.tense] || 0) + 1;
+            }
+            sessionData.questionTypeErrors[currentQuestion.question_type] = (sessionData.questionTypeErrors[currentQuestion.question_type] || 0) + 1;
+            sessionData.verbErrors[currentQuestion.verb] = (sessionData.verbErrors[currentQuestion.verb] || 0) + 1;
+        }
+        
+        // Check if session is complete
+        if (sessionQuestions >= SESSION_LENGTH) {
+            setTimeout(() => showSessionSummary(), 1500);
+        }
+    }
 }
 
 // Show feedback message
@@ -317,8 +355,12 @@ function updateScore(isCorrect) {
 
 // Update progress bar
 function updateProgressBar() {
-    const progress = (questionsAnswered % 10) * 10;
-    progressBarEl.style.width = progress + '%';
+    if (sessionActive) {
+        updateSessionProgress();
+    } else {
+        const progress = (questionsAnswered % 10) * 10;
+        progressBarEl.style.width = progress + '%';
+    }
 }
 
 // Update mascot state
@@ -351,6 +393,156 @@ function loadBestStreak() {
         bestStreak = parseInt(saved);
         bestStreakEl.textContent = bestStreak;
     }
+}
+
+// Event listeners
+nextBtnEl.addEventListener('click', loadQuestion);
+document.getElementById('start-session-btn').addEventListener('click', startSession);
+document.getElementById('close-summary-btn').addEventListener('click', closeSessionSummary);
+document.getElementById('restart-session-btn').addEventListener('click', restartSession);
+
+// Session management functions
+function startSession() {
+    sessionActive = true;
+    sessionQuestions = 0;
+    sessionCorrect = 0;
+    sessionIncorrect = 0;
+    sessionData = {
+        tenseErrors: {},
+        questionTypeErrors: {},
+        verbErrors: {}
+    };
+    
+    // Update UI
+    document.getElementById('session-panel').style.display = 'none';
+    document.getElementById('session-progress').style.display = 'block';
+    updateSessionProgress();
+    
+    // Reset score for session
+    score = 0;
+    streak = 0;
+    scoreEl.textContent = score;
+    streakEl.textContent = streak;
+    
+    loadQuestion();
+}
+
+function updateSessionProgress() {
+    const progressText = document.getElementById('session-progress-text');
+    progressText.textContent = `Question ${sessionQuestions}/${SESSION_LENGTH}`;
+    
+    const progressPercent = (sessionQuestions / SESSION_LENGTH) * 100;
+    progressBarEl.style.width = progressPercent + '%';
+}
+
+function showSessionSummary() {
+    const modal = document.getElementById('session-summary-modal');
+    const accuracy = sessionCorrect > 0 ? Math.round((sessionCorrect / SESSION_LENGTH) * 100) : 0;
+    
+    // Update summary stats
+    document.getElementById('summary-total').textContent = SESSION_LENGTH;
+    document.getElementById('summary-correct').textContent = sessionCorrect;
+    document.getElementById('summary-incorrect').textContent = sessionIncorrect;
+    document.getElementById('summary-accuracy').textContent = accuracy + '%';
+    document.getElementById('summary-score').textContent = score;
+    
+    // Generate feedback
+    const feedbackEl = document.getElementById('summary-feedback');
+    feedbackEl.innerHTML = generateFeedback(accuracy);
+    
+    // Show modal
+    modal.style.display = 'flex';
+}
+
+function generateFeedback(accuracy) {
+    let feedback = '<div class="feedback-section">';
+    
+    // Overall performance
+    if (accuracy >= 90) {
+        feedback += '<h3>🎉 ¡Excelente!</h3><p>Outstanding work! You have a strong grasp of Spanish verb conjugation.</p>';
+    } else if (accuracy >= 75) {
+        feedback += '<h3>🌟 ¡Muy bien!</h3><p>Great job! You\'re doing really well with your conjugations.</p>';
+    } else if (accuracy >= 60) {
+        feedback += '<h3>💪 Good effort!</h3><p>You\'re making progress! Keep practicing to improve.</p>';
+    } else {
+        feedback += '<h3>📚 Keep going!</h3><p>Don\'t give up! Consistent practice will help you improve.</p>';
+    }
+    feedback += '</div>';
+    
+    // Weak areas
+    if (sessionIncorrect > 0) {
+        feedback += '<div class="feedback-section">';
+        feedback += '<h3>💡 Areas to Focus On:</h3>';
+        feedback += '<ul class="feedback-list">';
+        
+        // Most problematic tenses
+        const tenseErrorsArray = Object.entries(sessionData.tenseErrors).sort((a, b) => b[1] - a[1]);
+        if (tenseErrorsArray.length > 0) {
+            const topTense = tenseErrorsArray[0];
+            feedback += `<li><strong>Tense:</strong> Practice more with <em>${topTense[0]}</em> (${topTense[1]} error${topTense[1] > 1 ? 's' : ''})</li>`;
+        }
+        
+        // Most problematic question types
+        const qtErrorsArray = Object.entries(sessionData.questionTypeErrors).sort((a, b) => b[1] - a[1]);
+        if (qtErrorsArray.length > 0) {
+            const topQT = qtErrorsArray[0];
+            const qtNames = {
+                'conjugation': 'Conjugation',
+                'identify-tense': 'Tense Identification',
+                'identify-pronoun': 'Pronoun Identification',
+                'identify-infinitive': 'Infinitive Identification'
+            };
+            feedback += `<li><strong>Question Type:</strong> Work on <em>${qtNames[topQT[0]]}</em> questions (${topQT[1]} error${topQT[1] > 1 ? 's' : ''})</li>`;
+        }
+        
+        // Most problematic verbs
+        const verbErrorsArray = Object.entries(sessionData.verbErrors).sort((a, b) => b[1] - a[1]).slice(0, 3);
+        if (verbErrorsArray.length > 0) {
+            feedback += '<li><strong>Verbs to review:</strong> ';
+            feedback += verbErrorsArray.map(v => `<em>${v[0]}</em>`).join(', ');
+            feedback += '</li>';
+        }
+        
+        feedback += '</ul></div>';
+    }
+    
+    // Tips
+    feedback += '<div class="feedback-section">';
+    feedback += '<h3>🎯 Tips for Improvement:</h3>';
+    feedback += '<ul class="feedback-list">';
+    
+    if (accuracy < 70) {
+        feedback += '<li>Review verb conjugation patterns for regular verbs</li>';
+        feedback += '<li>Focus on one tense at a time before moving to others</li>';
+    }
+    
+    const hasSubjunctiveErrors = sessionData.tenseErrors['presente subjuntivo'] || sessionData.tenseErrors['imperfecto subjuntivo'];
+    if (hasSubjunctiveErrors) {
+        feedback += '<li>Practice subjunctive mood - remember the "opposite vowel" rule</li>';
+    }
+    
+    const hasIdentifyErrors = sessionData.questionTypeErrors['identify-tense'] || sessionData.questionTypeErrors['identify-pronoun'];
+    if (hasIdentifyErrors) {
+        feedback += '<li>Study verb endings to better identify tenses and pronouns</li>';
+    }
+    
+    feedback += '<li>Take your time reading each question carefully</li>';
+    feedback += '<li>Pay attention to the hints provided after wrong answers</li>';
+    feedback += '</ul></div>';
+    
+    return feedback;
+}
+
+function closeSessionSummary() {
+    document.getElementById('session-summary-modal').style.display = 'none';
+    sessionActive = false;
+    document.getElementById('session-panel').style.display = 'block';
+    document.getElementById('session-progress').style.display = 'none';
+}
+
+function restartSession() {
+    closeSessionSummary();
+    startSession();
 }
 
 // Event listeners

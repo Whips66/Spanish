@@ -6,6 +6,8 @@ A fun and interactive web application for practicing Spanish verb conjugation, i
 
 - 🎮 **Gamified Learning**: Score points, build streaks, and track your best performance
 - 📊 **Progress Tracking**: Visual progress bar and real-time statistics
+- 🎯 **20-Question Sessions**: Complete structured practice sessions with performance analytics
+- 📈 **Detailed Feedback**: Get personalized improvement suggestions based on your weak areas
 - 🤖 **Animated Mascot**: Friendly robot character that celebrates correct answers and encourages you when wrong
 - 🎯 **Four Question Types** (25% each):
   - Conjugation questions: Conjugate verbs for given tense and pronoun
@@ -174,6 +176,25 @@ Test categories:
 - Edge cases and error handling
 
 ## How to Play
+
+### Practice Modes
+
+**Free Practice Mode**: Answer questions at your own pace to build skills
+- No time limits
+- Track your score and streaks
+- Learn from immediate feedback
+
+**Session Mode**: Complete a structured 20-question session
+- Click "Start 20-Question Session" to begin
+- Progress tracked throughout the session
+- Detailed performance summary at the end with:
+  - Overall accuracy percentage
+  - Questions correct/incorrect breakdown
+  - Personalized feedback on weak areas
+  - Specific recommendations for improvement
+  - Analysis of which tenses, question types, and verbs need more practice
+
+### Question Types
 
 ### Conjugation Questions (25% of questions)
 1. **Read the Verb**: See the infinitive form and its English translation

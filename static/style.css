@@ -349,6 +349,229 @@ footer {
     font-size: 1rem;
 }
 
+/* Session Controls */
+.session-panel {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-session {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+}
+
+.btn-session:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+}
+
+.session-progress {
+    text-align: center;
+    margin: 20px 0;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.session-progress-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.summary-stat {
+    background: #f8f9ff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #e8ecff;
+}
+
+.summary-stat.success {
+    background: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.summary-stat.error {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.summary-stat-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.summary-stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.summary-stat.success .summary-stat-value {
+    color: #155724;
+}
+
+.summary-stat.error .summary-stat-value {
+    color: #721c24;
+}
+
+.summary-feedback {
+    margin-top: 25px;
+}
+
+.feedback-section {
+    margin-bottom: 25px;
+}
+
+.feedback-section h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.feedback-section p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.feedback-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feedback-list li {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background: #f8f9ff;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    line-height: 1.5;
+}
+
+.feedback-list strong {
+    color: #667eea;
+}
+
+.feedback-list em {
+    color: #764ba2;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.modal-footer {
+    padding: 20px 30px;
+    background: #f8f9ff;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     header h1 {
@@ -381,5 +604,21 @@ footer {
     
     .option-btn {
         font-size: 1.1rem;
+    }
+    
+    .modal-content {
+        margin: 10px;
+    }
+    
+    .summary-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-footer .btn {
+        width: 100%;
     }
 }

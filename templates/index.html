@@ -27,6 +27,18 @@
             </div>
         </header>
 
+        <!-- Session Control Panel -->
+        <div class="session-panel" id="session-panel">
+            <button class="btn btn-session" id="start-session-btn">
+                🎯 Start 20-Question Session
+            </button>
+        </div>
+
+        <!-- Session Progress -->
+        <div class="session-progress" id="session-progress" style="display: none;">
+            <div class="session-progress-text" id="session-progress-text">Question 0/20</div>
+        </div>
+
         <!-- Progress Bar -->
         <div class="progress-container">
             <div class="progress-bar" id="progress-bar"></div>
@@ -75,6 +87,51 @@
         <footer>
             <p>Practice makes perfect! 🌟</p>
         </footer>
+    </div>
+
+    <!-- Session Summary Modal -->
+    <div class="modal" id="session-summary-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📊 Session Complete!</h2>
+            </div>
+            <div class="modal-body">
+                <div class="summary-stats">
+                    <div class="summary-stat">
+                        <div class="summary-stat-label">Total Questions</div>
+                        <div class="summary-stat-value" id="summary-total">0</div>
+                    </div>
+                    <div class="summary-stat success">
+                        <div class="summary-stat-label">Correct</div>
+                        <div class="summary-stat-value" id="summary-correct">0</div>
+                    </div>
+                    <div class="summary-stat error">
+                        <div class="summary-stat-label">Incorrect</div>
+                        <div class="summary-stat-value" id="summary-incorrect">0</div>
+                    </div>
+                    <div class="summary-stat">
+                        <div class="summary-stat-label">Accuracy</div>
+                        <div class="summary-stat-value" id="summary-accuracy">0%</div>
+                    </div>
+                    <div class="summary-stat">
+                        <div class="summary-stat-label">Score</div>
+                        <div class="summary-stat-value" id="summary-score">0</div>
+                    </div>
+                </div>
+                
+                <div class="summary-feedback" id="summary-feedback">
+                    <!-- Feedback will be inserted here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="restart-session-btn">
+                    🔄 Start New Session
+                </button>
+                <button class="btn btn-secondary" id="close-summary-btn">
+                    ✓ Done
+                </button>
+            </div>
+        </div>
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
