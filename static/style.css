@@ -8,7 +8,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    padding: 15px;
+    padding: 10px;
     color: #333;
 }
 
@@ -94,13 +94,13 @@ body {
 /* Header */
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 header h1 {
     color: white;
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -112,7 +112,7 @@ header h1 {
 
 .stat-item {
     background: rgba(255, 255, 255, 0.2);
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 10px;
     backdrop-filter: blur(10px);
     display: flex;
@@ -122,23 +122,23 @@ header h1 {
 
 .stat-label {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 0.85rem;
-    margin-bottom: 3px;
+    font-size: 0.75rem;
+    margin-bottom: 2px;
 }
 
 .stat-value {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
 /* Progress Bar */
 .progress-container {
     width: 100%;
-    height: 6px;
+    height: 5px;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     overflow: hidden;
 }
 
@@ -154,7 +154,7 @@ header h1 {
 .card {
     background: white;
     border-radius: 20px;
-    padding: 25px;
+    padding: 18px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.5s ease;
 }
@@ -172,51 +172,51 @@ header h1 {
 
 .verb-info {
     text-align: center;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #f0f0f0;
 }
 
 .infinitive {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #667eea;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .english {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #666;
     font-style: italic;
 }
 
 .tense-badge {
     display: inline-block;
-    margin-top: 10px;
-    padding: 6px 16px;
+    margin-top: 6px;
+    padding: 5px 14px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
 }
 
 .question {
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.question h2 {
-    font-size: 1.3rem;
-    color: #333;
     margin-bottom: 12px;
 }
 
+.question h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
 .pronoun {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #764ba2;
-    padding: 12px;
+    padding: 10px;
     background: #f8f9ff;
     border-radius: 10px;
     display: inline-block;
@@ -226,13 +226,13 @@ header h1 {
 .options {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 12px;
 }
 
 .option-btn {
-    padding: 15px;
-    font-size: 1.1rem;
+    padding: 12px;
+    font-size: 1.05rem;
     border: 3px solid #e0e0e0;
     background: white;
     border-radius: 15px;
@@ -285,16 +285,16 @@ header h1 {
 /* Feedback */
 .feedback {
     text-align: center;
-    margin: 15px 0;
-    padding: 15px;
+    margin: 10px 0;
+    padding: 12px;
     border-radius: 10px;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
     white-space: pre-line;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .feedback.show {
@@ -344,16 +344,16 @@ header h1 {
 /* Footer */
 footer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 12px;
     color: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 /* Session Controls */
 .session-panel {
     text-align: center;
-    margin: 20px 0;
-    padding: 15px;
+    margin: 10px 0;
+    padding: 10px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -363,8 +363,8 @@ footer {
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     color: white;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.1rem;
+    padding: 12px 24px;
+    font-size: 1rem;
     font-weight: 600;
     border-radius: 12px;
     cursor: pointer;
@@ -379,15 +379,15 @@ footer {
 
 .session-progress {
     text-align: center;
-    margin: 20px 0;
-    padding: 12px;
+    margin: 10px 0;
+    padding: 8px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .session-progress-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #667eea;
 }
@@ -423,9 +423,10 @@ footer {
     max-width: 700px;
     width: 100%;
     max-height: 90vh;
-    overflow-y: auto;
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes slideUp {
@@ -454,6 +455,28 @@ footer {
 
 .modal-body {
     padding: 30px;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Custom scrollbar styling for better visibility */
+.modal-body::-webkit-scrollbar {
+    width: 12px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
 .summary-stats {
@@ -553,6 +576,7 @@ footer {
     display: flex;
     gap: 15px;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .btn-secondary {

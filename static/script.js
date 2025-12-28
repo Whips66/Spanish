@@ -216,12 +216,26 @@ async function selectAnswer(answer, button) {
         // Update button styling
         if (isCorrect) {
             button.classList.add('correct');
+            
+            // For identify-infinitive, reveal the verb name and English after answering
+            if (currentQuestion.question_type === 'identify-infinitive') {
+                document.querySelector('.infinitive').textContent = currentQuestion.correct_answer;
+                document.querySelector('.english').textContent = currentQuestion.english;
+            }
+            
             showFeedback(true, result);
             updateScore(true);
             updateMascot('happy');
             playSound('correct');
         } else {
             button.classList.add('incorrect');
+            
+            // For identify-infinitive, reveal the verb name and English after answering
+            if (currentQuestion.question_type === 'identify-infinitive') {
+                document.querySelector('.infinitive').textContent = currentQuestion.correct_answer;
+                document.querySelector('.english').textContent = currentQuestion.english;
+            }
+            
             showFeedback(false, result);
             updateScore(false);
             updateMascot('sad');
@@ -244,12 +258,26 @@ async function selectAnswer(answer, button) {
         // Fallback to local check
         if (isCorrect) {
             button.classList.add('correct');
+            
+            // For identify-infinitive, reveal the verb name and English after answering
+            if (currentQuestion.question_type === 'identify-infinitive') {
+                document.querySelector('.infinitive').textContent = currentQuestion.correct_answer;
+                document.querySelector('.english').textContent = currentQuestion.english;
+            }
+            
             showFeedback(true, {});
             updateScore(true);
             updateMascot('happy');
             playSound('correct');
         } else {
             button.classList.add('incorrect');
+            
+            // For identify-infinitive, reveal the verb name and English after answering
+            if (currentQuestion.question_type === 'identify-infinitive') {
+                document.querySelector('.infinitive').textContent = currentQuestion.correct_answer;
+                document.querySelector('.english').textContent = currentQuestion.english;
+            }
+            
             showFeedback(false, {});
             updateScore(false);
             updateMascot('sad');
