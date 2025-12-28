@@ -12,10 +12,11 @@ A fun and interactive web application for practicing Spanish verb conjugation, i
 - 🎯 **Four Question Types** (25% each):
   - Conjugation questions: Conjugate verbs for given tense and pronoun
   - Identify tense questions: Identify which tense a conjugated verb is using
-  - Identify pronoun questions: Determine which pronoun matches the conjugation
+  - Identify pronoun questions: Determine which pronoun matches the conjugation (accepts multiple answers when forms are identical)
   - Identify infinitive questions: Match a conjugation to its base verb
 - ⚡ **Instant Feedback**: Immediate confirmation with encouraging messages and tense usage explanations
 - 💡 **Smart Hints**: Context-aware hints for wrong answers (regular verb patterns, irregular verb tips, pronoun clues)
+- 🔍 **Smart Answer Recognition**: Automatically accepts all valid answers when conjugations are ambiguous (e.g., "yo hablaba" = "él/ella hablaba")
 - 🌟 **50 Common Verbs**: Practice the most frequently used Spanish verbs
 - 📚 **10 Tenses**: Comprehensive coverage including simple, compound, and subjunctive tenses
 - 📱 **Responsive Design**: Works great on desktop and mobile devices
@@ -158,11 +159,12 @@ python -m unittest test_integration.py
 ### Test Coverage
 
 The test suite includes:
-- **39 tests** covering all functionality
+- **41 tests** covering all functionality
 - **Unit tests** for verb database, Flask routes, and API endpoints
 - **Integration tests** for complete user workflows
 - **Coverage tests** for all 50 verbs, 10 tenses, and 6 pronouns
 - **Question type tests** for all 4 question types (conjugation, identify-tense, identify-pronoun, identify-infinitive)
+- **Multiple correct answer tests** for ambiguous pronoun conjugations
 
 Test categories:
 - Verb database structure and validation
@@ -170,8 +172,10 @@ Test categories:
 - Flask API endpoints (`/`, `/api/question`, `/api/check`)
 - Question generation and randomization
 - Answer checking (correct/incorrect/case-insensitive)
-- Dual question type functionality
+- Multiple correct answer handling for ambiguous conjugations
+- All question type functionality
 - Tense identification questions
+- Pronoun identification with ambiguous forms
 - Complete user workflows
 - Edge cases and error handling
 

@@ -481,6 +481,65 @@ class TestIdentifyPronounQuestions(unittest.TestCase):
         
         # Should see multiple different pronouns
         self.assertGreater(len(pronouns_seen), 3)
+    
+    def test_identify_pronoun_multiple_correct_answers(self):
+        """Test that ambiguous conjugations return all correct answers"""
+        # Find a question with ambiguous conjugation (same form for multiple pronouns)
+        found_ambiguous = False
+        
+        for _ in range(100):
+            response = self.client.get('/api/question')
+            data = json.loads(response.data)
+            
+            if data['question_type'] == 'identify-pronoun':
+                # Check if all_correct_answers exists and has multiple values
+                if 'all_correct_answers' in data and len(data['all_correct_answers']) > 1:
+                    found_ambiguous = True
+                    
+                    # Verify all correct answers have the same conjugation
+                    verb_data = VERBS[data['verb']]
+                    tense = data['tense']
+                    conjugated_form = data['conjugated_form']
+                    
+                    for pronoun in data['all_correct_answers']:
+                        self.assertEqual(verb_data[tense][pronoun], conjugated_form,
+                                       f"All pronouns in all_correct_answers should have the same conjugation")
+                    
+                    # Verify the main correct_answer is in the list
+                    self.assertIn(data['correct_answer'], data['all_correct_answers'])
+                    
+                    break
+        
+        # We should find at least one ambiguous case (common in imperfecto, condicional)
+        self.assertTrue(found_ambiguous, "Should find at least one case with multiple correct answers")
+    
+    def test_identify_pronoun_accepts_any_valid_answer(self):
+        """Test that any of the multiple correct answers is accepted"""
+        # Find an ambiguous question
+        for _ in range(100):
+            response = self.client.get('/api/question')
+            question_data = json.loads(response.data)
+            
+            if (question_data['question_type'] == 'identify-pronoun' and 
+                'all_correct_answers' in question_data and 
+                len(question_data['all_correct_answers']) > 1):
+                
+                # Test that each correct answer is accepted
+                for correct_pronoun in question_data['all_correct_answers']:
+                    check_response = self.client.post('/api/check',
+                                                     json={
+                                                         'answer': correct_pronoun,
+                                                         'correct_answer': question_data['correct_answer'],
+                                                         'all_correct_answers': question_data['all_correct_answers'],
+                                                         'question_type': 'identify-pronoun'
+                                                     },
+                                                     content_type='application/json')
+                    
+                    check_data = json.loads(check_response.data)
+                    self.assertTrue(check_data['correct'],
+                                  f"{correct_pronoun} should be accepted as correct")
+                
+                break
 
 
 class TestIdentifyInfinitiveQuestions(unittest.TestCase):

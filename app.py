@@ -196,19 +196,28 @@ def get_question():
         })
     elif question_type == 'identify-pronoun':
         # Show conjugated verb, ask for the pronoun
-        # Generate options with pronouns
         correct_pronoun = pronoun
         
-        # Get 3 wrong pronouns
-        wrong_pronouns = [p for p in PRONOUNS if p != correct_pronoun]
+        # Find all pronouns that have the same conjugation (for ambiguous cases)
+        matching_pronouns = [p for p in PRONOUNS if verb_data[tense][p] == correct_answer]
+        
+        # Get wrong pronouns (ones with different conjugations)
+        wrong_pronouns = [p for p in PRONOUNS if verb_data[tense][p] != correct_answer]
         wrong_pronouns = random.sample(wrong_pronouns, min(3, len(wrong_pronouns)))
         
-        # Combine and shuffle
+        # Combine and shuffle - include all matching pronouns as options if possible
+        # Start with the correct one plus wrong ones
         all_options = [correct_pronoun] + wrong_pronouns
+        
+        # If there are other matching pronouns and room in options, include them
+        other_matching = [p for p in matching_pronouns if p != correct_pronoun]
+        if other_matching and len(all_options) < 4:
+            all_options.extend(other_matching[:4 - len(all_options)])
+        
         random.shuffle(all_options)
         
-        # Ensure all options are unique
-        all_options = list(dict.fromkeys(all_options))
+        # Ensure we have exactly 4 unique options
+        all_options = list(dict.fromkeys(all_options))[:4]
         
         return jsonify({
             'question_type': 'identify-pronoun',
@@ -219,7 +228,8 @@ def get_question():
             'conjugated_form': correct_answer,
             'pronoun': pronoun,
             'options': all_options,
-            'correct_answer': correct_pronoun
+            'correct_answer': correct_pronoun,
+            'all_correct_answers': matching_pronouns  # All valid answers
         })
     elif question_type == 'identify-infinitive':
         # Show conjugated verb, ask for the infinitive
