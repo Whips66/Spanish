@@ -15,7 +15,7 @@ A fun and interactive web application for practicing Spanish verb conjugation, i
 - ⚡ **Instant Feedback**: Immediate confirmation with encouraging messages and tense usage explanations
 - 💡 **Smart Hints**: Context-aware hints for wrong answers (regular verb patterns, irregular verb tips, pronoun clues)
 - 🌟 **50 Common Verbs**: Practice the most frequently used Spanish verbs
-- 📚 **8 Tenses**: Comprehensive coverage including simple and compound tenses
+- 📚 **10 Tenses**: Comprehensive coverage including simple, compound, and subjunctive tenses
 - 📱 **Responsive Design**: Works great on desktop and mobile devices
 - 🎓 **Educational**: Learn what each tense is used for with detailed descriptions
 - 🌐 **Spanish Interface**: Tense names displayed in Spanish for authentic learning
@@ -77,7 +77,9 @@ The application includes **50 of the most commonly used Spanish verbs**:
 
 ## Tenses Covered
 
-The app covers **8 verb tenses**:
+The app covers **10 verb tenses** including **indicative** and **subjunctive moods**:
+
+### Indicative Mood (8 tenses)
 
 1. **Presente** (Present) - Current actions, habitual actions, and general truths
 2. **Pretérito** (Preterite) - Completed actions in the past with a specific time frame
@@ -87,6 +89,11 @@ The app covers **8 verb tenses**:
 6. **Pretérito Perfecto** (Present Perfect) - Actions that happened in the recent past or have relevance to the present
 7. **Pluscuamperfecto** (Past Perfect/Pluperfect) - Actions that had happened before another past action
 8. **Futuro Perfecto** (Future Perfect) - Actions that will have been completed by a certain point in the future
+
+### Subjunctive Mood (2 tenses)
+
+9. **Presente de Subjuntivo** (Present Subjunctive) - Express wishes, doubts, emotions, recommendations, and uncertainty in present or future contexts. Common after expressions like "espero que...", "es importante que...", "dudo que..."
+10. **Imperfecto de Subjuntivo** (Imperfect Subjunctive) - Used for hypothetical situations, wishes in the past, "if" clauses (si clauses), and polite requests. Essential for expressing contrary-to-fact statements
 
 ## Installation
 
@@ -152,7 +159,7 @@ The test suite includes:
 - **39 tests** covering all functionality
 - **Unit tests** for verb database, Flask routes, and API endpoints
 - **Integration tests** for complete user workflows
-- **Coverage tests** for all 50 verbs, 8 tenses, and 6 pronouns
+- **Coverage tests** for all 50 verbs, 10 tenses, and 6 pronouns
 - **Question type tests** for all 4 question types (conjugation, identify-tense, identify-pronoun, identify-infinitive)
 
 Test categories:
@@ -203,6 +210,8 @@ After each question, you'll see:
 
 - Focus on one tense at a time when starting out
 - Pay attention to irregular verbs - they have unique patterns
+- **Subjunctive tips**: Remember the "opposite vowel" rule (ar→e, er/ir→a) for presente subjuntivo
+- **Subjunctive triggers**: Look for phrases like "espero que", "es importante que", "si yo fuera"
 - Read the hints provided after wrong answers to learn patterns
 - Read the tense descriptions after each answer to understand usage
 - Use the streak counter as motivation to maintain accuracy
@@ -212,7 +221,7 @@ After each question, you'll see:
  3.12)
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
 - **Styling**: Modern CSS with gradients, animations (including animated mascot), and responsive design
-- **Data Storage**: JSON file (50 verbs × 8 tenses × 6 pronouns = 2400 conjugations) with UTF-8 encoding
+- **Data Storage**: JSON file (50 verbs × 10 tenses × 6 pronouns = 3000 conjugations) with UTF-8 encoding
 - **Local Storage**: Browser LocalStorage for best streak persistence
 - **Testing**: Python unittest framework with 39 comprehensive tests
 - **Version Control**: Git
@@ -226,14 +235,14 @@ You can run or debug the application directly from VS Code using F5 or the Run m
 ## Future Enhancements
 
 Potential features to add:
-- Subjunctive mood tenses
+- Additional subjunctive tenses (perfecto de subjuntivo, pluscuamperfecto de subjuntivo)
+- Imperative mood (commands)
 - Difficulty levels (beginner/intermediate/advanced)
 - Timed challenges and speed rounds
 - Verb conjugation reference charts
 - Custom verb lists and focus areas
 - User accounts and progress saving
 - Audio pronunciation
-- Hints system
 - Spaced repetition algorithm
 - Mobile app version
 

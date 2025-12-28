@@ -14,7 +14,7 @@ def load_verbs():
 VERBS = load_verbs()
 
 PRONOUNS = ['yo', 'tú', 'él/ella', 'nosotros', 'vosotros', 'ellos']
-TENSES = ['presente', 'pretérito', 'imperfecto', 'futuro', 'condicional', 'perfecto', 'pluscuamperfecto', 'futuro perfecto']
+TENSES = ['presente', 'pretérito', 'imperfecto', 'futuro', 'condicional', 'perfecto', 'pluscuamperfecto', 'futuro perfecto', 'presente subjuntivo', 'imperfecto subjuntivo']
 TENSE_NAMES = {
     'presente': 'Presente',
     'pretérito': 'Pretérito',
@@ -23,7 +23,9 @@ TENSE_NAMES = {
     'condicional': 'Condicional',
     'perfecto': 'Pretérito Perfecto',
     'pluscuamperfecto': 'Pluscuamperfecto',
-    'futuro perfecto': 'Futuro Perfecto'
+    'futuro perfecto': 'Futuro Perfecto',
+    'presente subjuntivo': 'Presente de Subjuntivo',
+    'imperfecto subjuntivo': 'Imperfecto de Subjuntivo'
 }
 TENSE_DESCRIPTIONS = {
     'presente': 'Used for current actions, habitual actions, and general truths.',
@@ -33,7 +35,9 @@ TENSE_DESCRIPTIONS = {
     'condicional': 'Used for hypothetical situations, polite requests, and future actions from a past perspective.',
     'perfecto': 'Used for actions that happened in the recent past or have relevance to the present.',
     'pluscuamperfecto': 'Used for actions that had happened before another past action.',
-    'futuro perfecto': 'Used for actions that will have been completed by a certain point in the future.'
+    'futuro perfecto': 'Used for actions that will have been completed by a certain point in the future.',
+    'presente subjuntivo': 'Used to express wishes, doubts, emotions, recommendations, and uncertainty in present or future contexts.',
+    'imperfecto subjuntivo': 'Used for hypothetical situations, wishes in the past, "if" clauses, and polite requests.'
 }
 
 # Regular verb conjugation hints
@@ -62,6 +66,16 @@ CONJUGATION_HINTS = {
         '-ar': {'yo': '-ía', 'tú': '-ías', 'él/ella': '-ía', 'nosotros': '-íamos', 'vosotros': '-íais', 'ellos': '-ían'},
         '-er': {'yo': '-ía', 'tú': '-ías', 'él/ella': '-ía', 'nosotros': '-íamos', 'vosotros': '-íais', 'ellos': '-ían'},
         '-ir': {'yo': '-ía', 'tú': '-ías', 'él/ella': '-ía', 'nosotros': '-íamos', 'vosotros': '-íais', 'ellos': '-ían'}
+    },
+    'presente subjuntivo': {
+        '-ar': {'yo': '-e', 'tú': '-es', 'él/ella': '-e', 'nosotros': '-emos', 'vosotros': '-éis', 'ellos': '-en'},
+        '-er': {'yo': '-a', 'tú': '-as', 'él/ella': '-a', 'nosotros': '-amos', 'vosotros': '-áis', 'ellos': '-an'},
+        '-ir': {'yo': '-a', 'tú': '-as', 'él/ella': '-a', 'nosotros': '-amos', 'vosotros': '-áis', 'ellos': '-an'}
+    },
+    'imperfecto subjuntivo': {
+        '-ar': {'yo': '-ara', 'tú': '-aras', 'él/ella': '-ara', 'nosotros': '-áramos', 'vosotros': '-arais', 'ellos': '-aran'},
+        '-er': {'yo': '-iera', 'tú': '-ieras', 'él/ella': '-iera', 'nosotros': '-iéramos', 'vosotros': '-ierais', 'ellos': '-ieran'},
+        '-ir': {'yo': '-iera', 'tú': '-ieras', 'él/ella': '-iera', 'nosotros': '-iéramos', 'vosotros': '-ierais', 'ellos': '-ieran'}
     }
 }
 
@@ -121,7 +135,9 @@ TENSE_ID_HINTS = {
     'condicional': 'Conditional: Full infinitive + -ía endings (hablaría, comería)',
     'perfecto': 'Present perfect: Uses "he/has/ha/hemos/habéis/han" + past participle',
     'pluscuamperfecto': 'Pluperfect: Uses "había/habías/habíamos..." + past participle',
-    'futuro perfecto': 'Future perfect: Uses "habré/habrás/habrá/habremos/habréis/habrán" + past participle'
+    'futuro perfecto': 'Future perfect: Uses "habré/habrás/habrá/habremos/habréis/habrán" + past participle',
+    'presente subjuntivo': 'Present Subjunctive: Opposite vowel (-ar→-e, -er/-ir→-a). Common after "que"',
+    'imperfecto subjuntivo': 'Imperfect Subjunctive: -ara/-iera endings (hablara, comiera). Often in "if" clauses'
 }
 
 @app.route('/')

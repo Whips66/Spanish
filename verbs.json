@@ -65,6 +65,22 @@
       "tú": "habrás sido",
       "nosotros": "habremos sido",
       "yo": "habré sido"
+    },
+    "presente subjuntivo": {
+      "yo": "sea",
+      "tú": "seas",
+      "vosotros": "seáis",
+      "él/ella": "sea",
+      "nosotros": "seamos",
+      "ellos": "sean"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "fuera",
+      "tú": "fueras",
+      "vosotros": "fuerais",
+      "él/ella": "fuera",
+      "nosotros": "fueramos",
+      "ellos": "fueran"
     }
   },
   "estar": {
@@ -133,6 +149,22 @@
       "tú": "habrás estado",
       "nosotros": "habremos estado",
       "yo": "habré estado"
+    },
+    "presente subjuntivo": {
+      "yo": "esté",
+      "tú": "estés",
+      "vosotros": "estéis",
+      "él/ella": "esté",
+      "nosotros": "estemos",
+      "ellos": "estén"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "estuviera",
+      "tú": "estuvieras",
+      "vosotros": "estuvierais",
+      "él/ella": "estuviera",
+      "nosotros": "estuvieramos",
+      "ellos": "estuvieran"
     }
   },
   "haber": {
@@ -201,6 +233,22 @@
       "tú": "habrás habido",
       "nosotros": "habremos habido",
       "yo": "habré habido"
+    },
+    "presente subjuntivo": {
+      "yo": "haya",
+      "tú": "hayas",
+      "vosotros": "hayáis",
+      "él/ella": "haya",
+      "nosotros": "hayamos",
+      "ellos": "hayan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "hubiera",
+      "tú": "hubieras",
+      "vosotros": "hubierais",
+      "él/ella": "hubiera",
+      "nosotros": "hubieramos",
+      "ellos": "hubieran"
     }
   },
   "tener": {
@@ -269,6 +317,22 @@
       "tú": "habrás tenido",
       "nosotros": "habremos tenido",
       "yo": "habré tenido"
+    },
+    "presente subjuntivo": {
+      "yo": "tenga",
+      "tú": "tengas",
+      "vosotros": "tengáis",
+      "él/ella": "tenga",
+      "nosotros": "tengamos",
+      "ellos": "tengan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "tuviera",
+      "tú": "tuvieras",
+      "vosotros": "tuvierais",
+      "él/ella": "tuviera",
+      "nosotros": "tuvieramos",
+      "ellos": "tuvieran"
     }
   },
   "hacer": {
@@ -337,6 +401,22 @@
       "tú": "habrás hecho",
       "nosotros": "habremos hecho",
       "yo": "habré hecho"
+    },
+    "presente subjuntivo": {
+      "yo": "haga",
+      "tú": "hagas",
+      "vosotros": "hagáis",
+      "él/ella": "haga",
+      "nosotros": "hagamos",
+      "ellos": "hagan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "hiciera",
+      "tú": "hicieras",
+      "vosotros": "hicierais",
+      "él/ella": "hiciera",
+      "nosotros": "hicieramos",
+      "ellos": "hicieran"
     }
   },
   "poder": {
@@ -405,6 +485,22 @@
       "tú": "habrás podido",
       "nosotros": "habremos podido",
       "yo": "habré podido"
+    },
+    "presente subjuntivo": {
+      "yo": "pueda",
+      "tú": "puedas",
+      "vosotros": "puedáis",
+      "él/ella": "pueda",
+      "nosotros": "puedamos",
+      "ellos": "puedan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "pudiera",
+      "tú": "pudieras",
+      "vosotros": "pudierais",
+      "él/ella": "pudiera",
+      "nosotros": "pudieramos",
+      "ellos": "pudieran"
     }
   },
   "decir": {
@@ -473,6 +569,22 @@
       "tú": "habrás dicho",
       "nosotros": "habremos dicho",
       "yo": "habré dicho"
+    },
+    "presente subjuntivo": {
+      "yo": "diga",
+      "tú": "digas",
+      "vosotros": "digáis",
+      "él/ella": "diga",
+      "nosotros": "digamos",
+      "ellos": "digan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "dijera",
+      "tú": "dijeras",
+      "vosotros": "dijerais",
+      "él/ella": "dijera",
+      "nosotros": "dijeramos",
+      "ellos": "dijeran"
     }
   },
   "ir": {
@@ -541,6 +653,22 @@
       "tú": "habrás ido",
       "nosotros": "habremos ido",
       "yo": "habré ido"
+    },
+    "presente subjuntivo": {
+      "yo": "vaya",
+      "tú": "vayas",
+      "vosotros": "vayáis",
+      "él/ella": "vaya",
+      "nosotros": "vayamos",
+      "ellos": "vayan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "fuera",
+      "tú": "fueras",
+      "vosotros": "fuerais",
+      "él/ella": "fuera",
+      "nosotros": "fueramos",
+      "ellos": "fueran"
     }
   },
   "ver": {
@@ -609,6 +737,22 @@
       "tú": "habrás visto",
       "nosotros": "habremos visto",
       "yo": "habré visto"
+    },
+    "presente subjuntivo": {
+      "yo": "vea",
+      "tú": "veas",
+      "vosotros": "veáis",
+      "él/ella": "vea",
+      "nosotros": "veamos",
+      "ellos": "vean"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "viera",
+      "tú": "vieras",
+      "vosotros": "vierais",
+      "él/ella": "viera",
+      "nosotros": "vieramos",
+      "ellos": "vieran"
     }
   },
   "dar": {
@@ -677,6 +821,22 @@
       "tú": "habrás dado",
       "nosotros": "habremos dado",
       "yo": "habré dado"
+    },
+    "presente subjuntivo": {
+      "yo": "dé",
+      "tú": "des",
+      "vosotros": "deis",
+      "él/ella": "dé",
+      "nosotros": "demos",
+      "ellos": "den"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "diera",
+      "tú": "dieras",
+      "vosotros": "dierais",
+      "él/ella": "diera",
+      "nosotros": "dieramos",
+      "ellos": "dieran"
     }
   },
   "saber": {
@@ -745,6 +905,22 @@
       "tú": "habrás sabido",
       "nosotros": "habremos sabido",
       "yo": "habré sabido"
+    },
+    "presente subjuntivo": {
+      "yo": "sepa",
+      "tú": "sepas",
+      "vosotros": "sepáis",
+      "él/ella": "sepa",
+      "nosotros": "sepamos",
+      "ellos": "sepan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "supiera",
+      "tú": "supieras",
+      "vosotros": "supierais",
+      "él/ella": "supiera",
+      "nosotros": "supieramos",
+      "ellos": "supieran"
     }
   },
   "querer": {
@@ -813,6 +989,22 @@
       "tú": "habrás querido",
       "nosotros": "habremos querido",
       "yo": "habré querido"
+    },
+    "presente subjuntivo": {
+      "yo": "quiera",
+      "tú": "quieras",
+      "vosotros": "quieráis",
+      "él/ella": "quiera",
+      "nosotros": "quieramos",
+      "ellos": "quieran"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "quisiera",
+      "tú": "quisieras",
+      "vosotros": "quisierais",
+      "él/ella": "quisiera",
+      "nosotros": "quisieramos",
+      "ellos": "quisieran"
     }
   },
   "llegar": {
@@ -881,6 +1073,22 @@
       "tú": "habrás llegado",
       "nosotros": "habremos llegado",
       "yo": "habré llegado"
+    },
+    "presente subjuntivo": {
+      "yo": "llege",
+      "tú": "lleges",
+      "vosotros": "llegéis",
+      "él/ella": "llege",
+      "nosotros": "llegemos",
+      "ellos": "llegen"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "llegara",
+      "tú": "llegaras",
+      "vosotros": "llegarais",
+      "él/ella": "llegara",
+      "nosotros": "llegaramos",
+      "ellos": "llegaran"
     }
   },
   "pasar": {
@@ -949,6 +1157,22 @@
       "tú": "habrás pasado",
       "nosotros": "habremos pasado",
       "yo": "habré pasado"
+    },
+    "presente subjuntivo": {
+      "yo": "pase",
+      "tú": "pases",
+      "vosotros": "paséis",
+      "él/ella": "pase",
+      "nosotros": "pasemos",
+      "ellos": "pasen"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "pasara",
+      "tú": "pasaras",
+      "vosotros": "pasarais",
+      "él/ella": "pasara",
+      "nosotros": "pasaramos",
+      "ellos": "pasaran"
     }
   },
   "deber": {
@@ -1017,6 +1241,22 @@
       "tú": "habrás debido",
       "nosotros": "habremos debido",
       "yo": "habré debido"
+    },
+    "presente subjuntivo": {
+      "yo": "deba",
+      "tú": "debas",
+      "vosotros": "debáis",
+      "él/ella": "deba",
+      "nosotros": "debamos",
+      "ellos": "deban"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "debiera",
+      "tú": "debieras",
+      "vosotros": "debierais",
+      "él/ella": "debiera",
+      "nosotros": "debieramos",
+      "ellos": "debieran"
     }
   },
   "poner": {
@@ -1085,6 +1325,22 @@
       "tú": "habrás puesto",
       "nosotros": "habremos puesto",
       "yo": "habré puesto"
+    },
+    "presente subjuntivo": {
+      "yo": "ponga",
+      "tú": "pongas",
+      "vosotros": "pongáis",
+      "él/ella": "ponga",
+      "nosotros": "pongamos",
+      "ellos": "pongan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "pusiera",
+      "tú": "pusieras",
+      "vosotros": "pusierais",
+      "él/ella": "pusiera",
+      "nosotros": "pusieramos",
+      "ellos": "pusieran"
     }
   },
   "parecer": {
@@ -1153,6 +1409,22 @@
       "tú": "habrás parecido",
       "nosotros": "habremos parecido",
       "yo": "habré parecido"
+    },
+    "presente subjuntivo": {
+      "yo": "parezca",
+      "tú": "parezcas",
+      "vosotros": "parezcáis",
+      "él/ella": "parezca",
+      "nosotros": "parezcamos",
+      "ellos": "parezcan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "pareciera",
+      "tú": "parecieras",
+      "vosotros": "parecierais",
+      "él/ella": "pareciera",
+      "nosotros": "parecieramos",
+      "ellos": "parecieran"
     }
   },
   "quedar": {
@@ -1221,6 +1493,22 @@
       "tú": "habrás quedado",
       "nosotros": "habremos quedado",
       "yo": "habré quedado"
+    },
+    "presente subjuntivo": {
+      "yo": "quede",
+      "tú": "quedes",
+      "vosotros": "quedéis",
+      "él/ella": "quede",
+      "nosotros": "quedemos",
+      "ellos": "queden"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "quedara",
+      "tú": "quedaras",
+      "vosotros": "quedarais",
+      "él/ella": "quedara",
+      "nosotros": "quedaramos",
+      "ellos": "quedaran"
     }
   },
   "creer": {
@@ -1289,6 +1577,22 @@
       "tú": "habrás creído",
       "nosotros": "habremos creído",
       "yo": "habré creído"
+    },
+    "presente subjuntivo": {
+      "yo": "crea",
+      "tú": "creas",
+      "vosotros": "creáis",
+      "él/ella": "crea",
+      "nosotros": "creamos",
+      "ellos": "crean"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "creyera",
+      "tú": "creyeras",
+      "vosotros": "creyerais",
+      "él/ella": "creyera",
+      "nosotros": "creyeramos",
+      "ellos": "creyeran"
     }
   },
   "hablar": {
@@ -1357,6 +1661,22 @@
       "tú": "habrás hablado",
       "nosotros": "habremos hablado",
       "yo": "habré hablado"
+    },
+    "presente subjuntivo": {
+      "yo": "hable",
+      "tú": "hables",
+      "vosotros": "habléis",
+      "él/ella": "hable",
+      "nosotros": "hablemos",
+      "ellos": "hablen"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "hablara",
+      "tú": "hablaras",
+      "vosotros": "hablarais",
+      "él/ella": "hablara",
+      "nosotros": "hablaramos",
+      "ellos": "hablaran"
     }
   },
   "llevar": {
@@ -1425,6 +1745,22 @@
       "tú": "habrás llevado",
       "nosotros": "habremos llevado",
       "yo": "habré llevado"
+    },
+    "presente subjuntivo": {
+      "yo": "lleve",
+      "tú": "lleves",
+      "vosotros": "llevéis",
+      "él/ella": "lleve",
+      "nosotros": "llevemos",
+      "ellos": "lleven"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "llevara",
+      "tú": "llevaras",
+      "vosotros": "llevarais",
+      "él/ella": "llevara",
+      "nosotros": "llevaramos",
+      "ellos": "llevaran"
     }
   },
   "dejar": {
@@ -1493,6 +1829,22 @@
       "tú": "habrás dejado",
       "nosotros": "habremos dejado",
       "yo": "habré dejado"
+    },
+    "presente subjuntivo": {
+      "yo": "deje",
+      "tú": "dejes",
+      "vosotros": "dejéis",
+      "él/ella": "deje",
+      "nosotros": "dejemos",
+      "ellos": "dejen"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "dejara",
+      "tú": "dejaras",
+      "vosotros": "dejarais",
+      "él/ella": "dejara",
+      "nosotros": "dejaramos",
+      "ellos": "dejaran"
     }
   },
   "seguir": {
@@ -1561,6 +1913,22 @@
       "tú": "habrás seguido",
       "nosotros": "habremos seguido",
       "yo": "habré seguido"
+    },
+    "presente subjuntivo": {
+      "yo": "siga",
+      "tú": "sigas",
+      "vosotros": "sigáis",
+      "él/ella": "siga",
+      "nosotros": "sigamos",
+      "ellos": "sigan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "siguiera",
+      "tú": "siguieras",
+      "vosotros": "siguierais",
+      "él/ella": "siguiera",
+      "nosotros": "siguieramos",
+      "ellos": "siguieran"
     }
   },
   "encontrar": {
@@ -1629,6 +1997,22 @@
       "tú": "habrás encontrado",
       "nosotros": "habremos encontrado",
       "yo": "habré encontrado"
+    },
+    "presente subjuntivo": {
+      "yo": "encuentre",
+      "tú": "encuentres",
+      "vosotros": "encuentréis",
+      "él/ella": "encuentre",
+      "nosotros": "encuentremos",
+      "ellos": "encuentren"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "encontrara",
+      "tú": "encontraras",
+      "vosotros": "encontrarais",
+      "él/ella": "encontrara",
+      "nosotros": "encontraramos",
+      "ellos": "encontraran"
     }
   },
   "llamar": {
@@ -1697,6 +2081,22 @@
       "tú": "habrás llamado",
       "nosotros": "habremos llamado",
       "yo": "habré llamado"
+    },
+    "presente subjuntivo": {
+      "yo": "llame",
+      "tú": "llames",
+      "vosotros": "llaméis",
+      "él/ella": "llame",
+      "nosotros": "llamemos",
+      "ellos": "llamen"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "llamara",
+      "tú": "llamaras",
+      "vosotros": "llamarais",
+      "él/ella": "llamara",
+      "nosotros": "llamaramos",
+      "ellos": "llamaran"
     }
   },
   "venir": {
@@ -1765,6 +2165,22 @@
       "tú": "habrás venido",
       "nosotros": "habremos venido",
       "yo": "habré venido"
+    },
+    "presente subjuntivo": {
+      "yo": "venga",
+      "tú": "vengas",
+      "vosotros": "vengáis",
+      "él/ella": "venga",
+      "nosotros": "vengamos",
+      "ellos": "vengan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "viniera",
+      "tú": "vinieras",
+      "vosotros": "vinierais",
+      "él/ella": "viniera",
+      "nosotros": "vinieramos",
+      "ellos": "vinieran"
     }
   },
   "salir": {
@@ -1833,6 +2249,22 @@
       "tú": "habrás salido",
       "nosotros": "habremos salido",
       "yo": "habré salido"
+    },
+    "presente subjuntivo": {
+      "yo": "salga",
+      "tú": "salgas",
+      "vosotros": "salgáis",
+      "él/ella": "salga",
+      "nosotros": "salgamos",
+      "ellos": "salgan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "saliera",
+      "tú": "salieras",
+      "vosotros": "salierais",
+      "él/ella": "saliera",
+      "nosotros": "salieramos",
+      "ellos": "salieran"
     }
   },
   "traer": {
@@ -1901,6 +2333,22 @@
       "tú": "habrás traído",
       "nosotros": "habremos traído",
       "yo": "habré traído"
+    },
+    "presente subjuntivo": {
+      "yo": "traiga",
+      "tú": "traigas",
+      "vosotros": "traigáis",
+      "él/ella": "traiga",
+      "nosotros": "traigamos",
+      "ellos": "traigan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "trajera",
+      "tú": "trajeras",
+      "vosotros": "trajerais",
+      "él/ella": "trajera",
+      "nosotros": "trajeramos",
+      "ellos": "trajeran"
     }
   },
   "caer": {
@@ -1969,6 +2417,22 @@
       "tú": "habrás caído",
       "nosotros": "habremos caído",
       "yo": "habré caído"
+    },
+    "presente subjuntivo": {
+      "yo": "caiga",
+      "tú": "caigas",
+      "vosotros": "caigáis",
+      "él/ella": "caiga",
+      "nosotros": "caigamos",
+      "ellos": "caigan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "cayera",
+      "tú": "cayeras",
+      "vosotros": "cayerais",
+      "él/ella": "cayera",
+      "nosotros": "cayeramos",
+      "ellos": "cayeran"
     }
   },
   "oír": {
@@ -2037,6 +2501,22 @@
       "tú": "habrás oído",
       "nosotros": "habremos oído",
       "yo": "habré oído"
+    },
+    "presente subjuntivo": {
+      "yo": "oiga",
+      "tú": "oigas",
+      "vosotros": "oigáis",
+      "él/ella": "oiga",
+      "nosotros": "oigamos",
+      "ellos": "oigan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "oyera",
+      "tú": "oyeras",
+      "vosotros": "oyerais",
+      "él/ella": "oyera",
+      "nosotros": "oyeramos",
+      "ellos": "oyeran"
     }
   },
   "conocer": {
@@ -2105,6 +2585,22 @@
       "tú": "habrás conocido",
       "nosotros": "habremos conocido",
       "yo": "habré conocido"
+    },
+    "presente subjuntivo": {
+      "yo": "conozca",
+      "tú": "conozcas",
+      "vosotros": "conozcáis",
+      "él/ella": "conozca",
+      "nosotros": "conozcamos",
+      "ellos": "conozcan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "conociera",
+      "tú": "conocieras",
+      "vosotros": "conocierais",
+      "él/ella": "conociera",
+      "nosotros": "conocieramos",
+      "ellos": "conocieran"
     }
   },
   "sentir": {
@@ -2173,6 +2669,22 @@
       "tú": "habrás sentido",
       "nosotros": "habremos sentido",
       "yo": "habré sentido"
+    },
+    "presente subjuntivo": {
+      "yo": "sienta",
+      "tú": "sientas",
+      "vosotros": "sientáis",
+      "él/ella": "sienta",
+      "nosotros": "sientamos",
+      "ellos": "sientan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "sintiera",
+      "tú": "sintieras",
+      "vosotros": "sintierais",
+      "él/ella": "sintiera",
+      "nosotros": "sintieramos",
+      "ellos": "sintieran"
     }
   },
   "pensar": {
@@ -2241,6 +2753,22 @@
       "tú": "habrás pensado",
       "nosotros": "habremos pensado",
       "yo": "habré pensado"
+    },
+    "presente subjuntivo": {
+      "yo": "piense",
+      "tú": "pienses",
+      "vosotros": "pienséis",
+      "él/ella": "piense",
+      "nosotros": "piensemos",
+      "ellos": "piensen"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "pensara",
+      "tú": "pensaras",
+      "vosotros": "pensarais",
+      "él/ella": "pensara",
+      "nosotros": "pensaramos",
+      "ellos": "pensaran"
     }
   },
   "dormir": {
@@ -2309,6 +2837,22 @@
       "tú": "habrás dormido",
       "nosotros": "habremos dormido",
       "yo": "habré dormido"
+    },
+    "presente subjuntivo": {
+      "yo": "duerma",
+      "tú": "duermas",
+      "vosotros": "duermáis",
+      "él/ella": "duerma",
+      "nosotros": "duermamos",
+      "ellos": "duerman"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "durmiera",
+      "tú": "durmieras",
+      "vosotros": "durmierais",
+      "él/ella": "durmiera",
+      "nosotros": "durmieramos",
+      "ellos": "durmieran"
     }
   },
   "pedir": {
@@ -2377,6 +2921,22 @@
       "tú": "habrás pedido",
       "nosotros": "habremos pedido",
       "yo": "habré pedido"
+    },
+    "presente subjuntivo": {
+      "yo": "pida",
+      "tú": "pidas",
+      "vosotros": "pidáis",
+      "él/ella": "pida",
+      "nosotros": "pidamos",
+      "ellos": "pidan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "pidiera",
+      "tú": "pidieras",
+      "vosotros": "pidierais",
+      "él/ella": "pidiera",
+      "nosotros": "pidieramos",
+      "ellos": "pidieran"
     }
   },
   "vivir": {
@@ -2445,6 +3005,22 @@
       "tú": "habrás vivido",
       "nosotros": "habremos vivido",
       "yo": "habré vivido"
+    },
+    "presente subjuntivo": {
+      "yo": "viva",
+      "tú": "vivas",
+      "vosotros": "viváis",
+      "él/ella": "viva",
+      "nosotros": "vivamos",
+      "ellos": "vivan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "viviera",
+      "tú": "vivieras",
+      "vosotros": "vivierais",
+      "él/ella": "viviera",
+      "nosotros": "vivieramos",
+      "ellos": "vivieran"
     }
   },
   "comer": {
@@ -2513,6 +3089,22 @@
       "tú": "habrás comido",
       "nosotros": "habremos comido",
       "yo": "habré comido"
+    },
+    "presente subjuntivo": {
+      "yo": "coma",
+      "tú": "comas",
+      "vosotros": "comáis",
+      "él/ella": "coma",
+      "nosotros": "comamos",
+      "ellos": "coman"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "comiera",
+      "tú": "comieras",
+      "vosotros": "comierais",
+      "él/ella": "comiera",
+      "nosotros": "comieramos",
+      "ellos": "comieran"
     }
   },
   "beber": {
@@ -2581,6 +3173,22 @@
       "tú": "habrás bebido",
       "nosotros": "habremos bebido",
       "yo": "habré bebido"
+    },
+    "presente subjuntivo": {
+      "yo": "beba",
+      "tú": "bebas",
+      "vosotros": "bebáis",
+      "él/ella": "beba",
+      "nosotros": "bebamos",
+      "ellos": "beban"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "bebiera",
+      "tú": "bebieras",
+      "vosotros": "bebierais",
+      "él/ella": "bebiera",
+      "nosotros": "bebieramos",
+      "ellos": "bebieran"
     }
   },
   "trabajar": {
@@ -2649,6 +3257,22 @@
       "tú": "habrás trabajado",
       "nosotros": "habremos trabajado",
       "yo": "habré trabajado"
+    },
+    "presente subjuntivo": {
+      "yo": "trabaje",
+      "tú": "trabajes",
+      "vosotros": "trabajéis",
+      "él/ella": "trabaje",
+      "nosotros": "trabajemos",
+      "ellos": "trabajen"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "trabajara",
+      "tú": "trabajaras",
+      "vosotros": "trabajarais",
+      "él/ella": "trabajara",
+      "nosotros": "trabajaramos",
+      "ellos": "trabajaran"
     }
   },
   "estudiar": {
@@ -2717,6 +3341,22 @@
       "tú": "habrás estudiado",
       "nosotros": "habremos estudiado",
       "yo": "habré estudiado"
+    },
+    "presente subjuntivo": {
+      "yo": "estudie",
+      "tú": "estudies",
+      "vosotros": "estudiéis",
+      "él/ella": "estudie",
+      "nosotros": "estudiemos",
+      "ellos": "estudien"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "estudiara",
+      "tú": "estudiaras",
+      "vosotros": "estudiarais",
+      "él/ella": "estudiara",
+      "nosotros": "estudiaramos",
+      "ellos": "estudiaran"
     }
   },
   "necesitar": {
@@ -2785,6 +3425,22 @@
       "tú": "habrás necesitado",
       "nosotros": "habremos necesitado",
       "yo": "habré necesitado"
+    },
+    "presente subjuntivo": {
+      "yo": "necesite",
+      "tú": "necesites",
+      "vosotros": "necesitéis",
+      "él/ella": "necesite",
+      "nosotros": "necesitemos",
+      "ellos": "necesiten"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "necesitara",
+      "tú": "necesitaras",
+      "vosotros": "necesitarais",
+      "él/ella": "necesitara",
+      "nosotros": "necesitaramos",
+      "ellos": "necesitaran"
     }
   },
   "escribir": {
@@ -2853,6 +3509,22 @@
       "tú": "habrás escrito",
       "nosotros": "habremos escrito",
       "yo": "habré escrito"
+    },
+    "presente subjuntivo": {
+      "yo": "escriba",
+      "tú": "escribas",
+      "vosotros": "escribáis",
+      "él/ella": "escriba",
+      "nosotros": "escribamos",
+      "ellos": "escriban"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "escribiera",
+      "tú": "escribieras",
+      "vosotros": "escribierais",
+      "él/ella": "escribiera",
+      "nosotros": "escribieramos",
+      "ellos": "escribieran"
     }
   },
   "leer": {
@@ -2921,6 +3593,22 @@
       "tú": "habrás leído",
       "nosotros": "habremos leído",
       "yo": "habré leído"
+    },
+    "presente subjuntivo": {
+      "yo": "lea",
+      "tú": "leas",
+      "vosotros": "leáis",
+      "él/ella": "lea",
+      "nosotros": "leamos",
+      "ellos": "lean"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "leyera",
+      "tú": "leyeras",
+      "vosotros": "leyerais",
+      "él/ella": "leyera",
+      "nosotros": "leyeramos",
+      "ellos": "leyeran"
     }
   },
   "comenzar": {
@@ -2989,6 +3677,22 @@
       "tú": "habrás comenzado",
       "nosotros": "habremos comenzado",
       "yo": "habré comenzado"
+    },
+    "presente subjuntivo": {
+      "yo": "comienze",
+      "tú": "comienzes",
+      "vosotros": "comienzéis",
+      "él/ella": "comienze",
+      "nosotros": "comienzemos",
+      "ellos": "comienzen"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "comenzara",
+      "tú": "comenzaras",
+      "vosotros": "comenzarais",
+      "él/ella": "comenzara",
+      "nosotros": "comenzaramos",
+      "ellos": "comenzaran"
     }
   },
   "morir": {
@@ -3057,6 +3761,22 @@
       "tú": "habrás muerto",
       "nosotros": "habremos muerto",
       "yo": "habré muerto"
+    },
+    "presente subjuntivo": {
+      "yo": "muera",
+      "tú": "mueras",
+      "vosotros": "mueráis",
+      "él/ella": "muera",
+      "nosotros": "mueramos",
+      "ellos": "mueran"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "muriera",
+      "tú": "murieras",
+      "vosotros": "murierais",
+      "él/ella": "muriera",
+      "nosotros": "murieramos",
+      "ellos": "murieran"
     }
   },
   "abrir": {
@@ -3125,6 +3845,22 @@
       "nosotros": "habremos abierto",
       "vosotros": "habréis abierto",
       "ellos": "habrán abierto"
+    },
+    "presente subjuntivo": {
+      "yo": "abra",
+      "tú": "abras",
+      "vosotros": "abráis",
+      "él/ella": "abra",
+      "nosotros": "abramos",
+      "ellos": "abran"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "abriera",
+      "tú": "abrieras",
+      "vosotros": "abrierais",
+      "él/ella": "abriera",
+      "nosotros": "abrieramos",
+      "ellos": "abrieran"
     }
   },
   "cerrar": {
@@ -3193,6 +3929,22 @@
       "nosotros": "habremos cerrado",
       "vosotros": "habréis cerrado",
       "ellos": "habrán cerrado"
+    },
+    "presente subjuntivo": {
+      "yo": "cierre",
+      "tú": "cierres",
+      "vosotros": "cierréis",
+      "él/ella": "cierre",
+      "nosotros": "cierremos",
+      "ellos": "cierren"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "cerrara",
+      "tú": "cerraras",
+      "vosotros": "cerrarais",
+      "él/ella": "cerrara",
+      "nosotros": "cerraramos",
+      "ellos": "cerraran"
     }
   },
   "recibir": {
@@ -3261,6 +4013,22 @@
       "nosotros": "habremos recibido",
       "vosotros": "habréis recibido",
       "ellos": "habrán recibido"
+    },
+    "presente subjuntivo": {
+      "yo": "reciba",
+      "tú": "recibas",
+      "vosotros": "recibáis",
+      "él/ella": "reciba",
+      "nosotros": "recibamos",
+      "ellos": "reciban"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "recibiera",
+      "tú": "recibieras",
+      "vosotros": "recibierais",
+      "él/ella": "recibiera",
+      "nosotros": "recibieramos",
+      "ellos": "recibieran"
     }
   },
   "volver": {
@@ -3329,6 +4097,22 @@
       "nosotros": "habremos vuelto",
       "vosotros": "habréis vuelto",
       "ellos": "habrán vuelto"
+    },
+    "presente subjuntivo": {
+      "yo": "vuelva",
+      "tú": "vuelvas",
+      "vosotros": "vuelváis",
+      "él/ella": "vuelva",
+      "nosotros": "vuelvamos",
+      "ellos": "vuelvan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "volviera",
+      "tú": "volvieras",
+      "vosotros": "volvierais",
+      "él/ella": "volviera",
+      "nosotros": "volvieramos",
+      "ellos": "volvieran"
     }
   },
   "entender": {
@@ -3397,6 +4181,22 @@
       "nosotros": "habremos entendido",
       "vosotros": "habréis entendido",
       "ellos": "habrán entendido"
+    },
+    "presente subjuntivo": {
+      "yo": "entienda",
+      "tú": "entiendas",
+      "vosotros": "entiendáis",
+      "él/ella": "entienda",
+      "nosotros": "entiendamos",
+      "ellos": "entiendan"
+    },
+    "imperfecto subjuntivo": {
+      "yo": "entendiera",
+      "tú": "entendieras",
+      "vosotros": "entendierais",
+      "él/ella": "entendiera",
+      "nosotros": "entendieramos",
+      "ellos": "entendieran"
     }
   }
 }

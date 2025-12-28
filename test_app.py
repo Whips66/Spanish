@@ -26,6 +26,8 @@ class TestVerbDatabase(unittest.TestCase):
                 self.assertIn('perfecto', verb_data)
                 self.assertIn('pluscuamperfecto', verb_data)
                 self.assertIn('futuro perfecto', verb_data)
+                self.assertIn('presente subjuntivo', verb_data)
+                self.assertIn('imperfecto subjuntivo', verb_data)
     
     def test_verb_conjugations(self):
         """Test that each tense has all pronouns"""
