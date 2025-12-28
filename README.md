@@ -6,19 +6,23 @@ A fun and interactive web application for practicing Spanish verb conjugation, i
 
 - 🎮 **Gamified Learning**: Score points, build streaks, and track your best performance
 - 📊 **Progress Tracking**: Visual progress bar and real-time statistics
-- 🎯 **Dual Question Types**: 
-  - Conjugation questions (75%): Conjugate verbs for given tense and pronoun
-  - Identify tense questions (25%): Identify which tense a conjugated verb is using
+- 🤖 **Animated Mascot**: Friendly robot character that celebrates correct answers and encourages you when wrong
+- 🎯 **Four Question Types** (25% each):
+  - Conjugation questions: Conjugate verbs for given tense and pronoun
+  - Identify tense questions: Identify which tense a conjugated verb is using
+  - Identify pronoun questions: Determine which pronoun matches the conjugation
+  - Identify infinitive questions: Match a conjugation to its base verb
 - ⚡ **Instant Feedback**: Immediate confirmation with encouraging messages and tense usage explanations
-- 🌟 **25 Common Verbs**: Practice the most frequently used Spanish verbs
-- 📚 **7 Tenses**: Comprehensive coverage from present to compound past tenses
+- 💡 **Smart Hints**: Context-aware hints for wrong answers (regular verb patterns, irregular verb tips, pronoun clues)
+- 🌟 **50 Common Verbs**: Practice the most frequently used Spanish verbs
+- 📚 **8 Tenses**: Comprehensive coverage including simple and compound tenses
 - 📱 **Responsive Design**: Works great on desktop and mobile devices
 - 🎓 **Educational**: Learn what each tense is used for with detailed descriptions
 - 🌐 **Spanish Interface**: Tense names displayed in Spanish for authentic learning
 
 ## Verb Coverage
 
-The application includes **25 of the most commonly used Spanish verbs**:
+The application includes **50 of the most commonly used Spanish verbs**:
 
 - ser (to be)
 - estar (to be - location/condition)
@@ -45,10 +49,35 @@ The application includes **25 of the most commonly used Spanish verbs**:
 - seguir (to follow/continue)
 - encontrar (to find)
 - llamar (to call)
+- venir (to come)
+- pensar (to think)
+- salir (to leave/go out)
+- volver (to return)
+- tomar (to take)
+- conocer (to know/meet)
+- vivir (to live)
+- sentir (to feel)
+- tratar (to treat/try)
+- mirar (to look)
+- contar (to count/tell)
+- empezar (to begin)
+- esperar (to wait/hope)
+- buscar (to search)
+- existir (to exist)
+- entrar (to enter)
+- trabajar (to work)
+- escribir (to write)
+- perder (to lose)
+- producir (to produce)
+- abrir (to open)
+- cerrar (to close)
+- recibir (to receive)
+- volver (to return)
+- entender (to understand)
 
 ## Tenses Covered
 
-The app covers **7 verb tenses**:
+The app covers **8 verb tenses**:
 
 1. **Presente** (Present) - Current actions, habitual actions, and general truths
 2. **Pretérito** (Preterite) - Completed actions in the past with a specific time frame
@@ -57,6 +86,7 @@ The app covers **7 verb tenses**:
 5. **Condicional** (Conditional) - Hypothetical situations, polite requests, and future actions from a past perspective
 6. **Pretérito Perfecto** (Present Perfect) - Actions that happened in the recent past or have relevance to the present
 7. **Pluscuamperfecto** (Past Perfect/Pluperfect) - Actions that had happened before another past action
+8. **Futuro Perfecto** (Future Perfect) - Actions that will have been completed by a certain point in the future
 
 ## Installation
 
@@ -119,11 +149,11 @@ python -m unittest test_integration.py
 ### Test Coverage
 
 The test suite includes:
-- **26 tests** covering all functionality
+- **39 tests** covering all functionality
 - **Unit tests** for verb database, Flask routes, and API endpoints
 - **Integration tests** for complete user workflows
-- **Coverage tests** for all verbs, tenses, and pronouns
-- **Question type tests** for both conjugation and identify-tense questions
+- **Coverage tests** for all 50 verbs, 8 tenses, and 6 pronouns
+- **Question type tests** for all 4 question types (conjugation, identify-tense, identify-pronoun, identify-infinitive)
 
 Test categories:
 - Verb database structure and validation
@@ -138,21 +168,34 @@ Test categories:
 
 ## How to Play
 
-### Conjugation Questions (75% of questions)
+### Conjugation Questions (25% of questions)
 1. **Read the Verb**: See the infinitive form and its English translation
 2. **Check the Tense**: See which tense is displayed (in Spanish)
 3. **See the Pronoun**: Look at which pronoun you need to conjugate for
 4. **Select Your Answer**: Click the correct conjugation from the options
-5. **Get Feedback**: Receive immediate feedback with tense usage description
+5. **Get Feedback**: Receive immediate feedback with tense usage description and hints if wrong
 
 ### Identify Tense Questions (25% of questions)
 1. **Read the Verb**: See the infinitive form and its English translation
 2. **See the Conjugation**: A fully conjugated verb form is shown with its pronoun
 3. **Identify the Tense**: Choose which Spanish tense the conjugation belongs to
-4. **Get Feedback**: Learn about the tense usage after answering
+4. **Get Feedback**: Learn about the tense usage and get hints about tense characteristics
+
+### Identify Pronoun Questions (25% of questions)
+1. **Read the Verb**: See the infinitive form and its English translation
+2. **Check the Tense**: See which tense is displayed (in Spanish)
+3. **See the Conjugation**: A fully conjugated verb form is shown
+4. **Identify the Pronoun**: Choose which pronoun matches the conjugation
+5. **Get Feedback**: Learn with hints about pronoun-verb endings
+
+### Identify Infinitive Questions (25% of questions)
+1. **See the Conjugation**: A fully conjugated verb form is shown with tense and pronoun
+2. **Identify the Verb**: Choose which infinitive (base form) the conjugation comes from
+3. **Get Feedback**: Learn about verb patterns and irregularities
 
 After each question, you'll see:
-- ✅ or ❌ Immediate feedback on your answer
+- ✅ or ❌ Immediate feedback with animated mascot reaction
+- 💡 Helpful hints if you answered incorrectly
 - 📖 A description of what the tense is used for (in English)
 - 📊 Updated score and streak counters
 
@@ -160,16 +203,18 @@ After each question, you'll see:
 
 - Focus on one tense at a time when starting out
 - Pay attention to irregular verbs - they have unique patterns
+- Read the hints provided after wrong answers to learn patterns
 - Read the tense descriptions after each answer to understand usage
 - Use the streak counter as motivation to maintain accuracy
-- The identify-tense questions help you recognize verb forms in context
+- The variety of question types helps reinforce learning from different angles
 - Practice regularly for best results
+- Watch the mascot celebrate your progress!
  3.12)
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Styling**: Modern CSS with gradients, animations, and responsive design
-- **Data Storage**: JSON file with UTF-8 encoding for Spanish characters
+- **Styling**: Modern CSS with gradients, animations (including animated mascot), and responsive design
+- **Data Storage**: JSON file (50 verbs × 8 tenses × 6 pronouns = 2400 conjugations) with UTF-8 encoding
 - **Local Storage**: Browser LocalStorage for best streak persistence
-- **Testing**: Python unittest framework
+- **Testing**: Python unittest framework with 39 comprehensive tests
 - **Version Control**: Git
 
 The project includes VS Code configuration files:
