@@ -338,33 +338,36 @@ function showFeedback(isCorrect, result = {}) {
     let message = messageList[Math.floor(Math.random() * messageList.length)];
     
     if (!isCorrect) {
+        let correctAnswerText = '';
         if (currentQuestion.question_type === 'identify-tense') {
-            message += ` Correct tense: ${currentQuestion.correct_answer}`;
+            correctAnswerText = `Correct tense: ${currentQuestion.correct_answer}`;
         } else if (currentQuestion.question_type === 'identify-pronoun') {
             // Show all correct answers if there are multiple
             if (currentQuestion.all_correct_answers && currentQuestion.all_correct_answers.length > 1) {
-                message += ` Correct pronouns: ${currentQuestion.all_correct_answers.join(' or ')}`;
+                correctAnswerText = `Correct pronouns: ${currentQuestion.all_correct_answers.join(' or ')}`;
             } else {
-                message += ` Correct pronoun: ${currentQuestion.correct_answer}`;
+                correctAnswerText = `Correct pronoun: ${currentQuestion.correct_answer}`;
             }
         } else if (currentQuestion.question_type === 'identify-infinitive') {
-            message += ` Correct verb: ${currentQuestion.correct_answer} (${currentQuestion.english})`;
+            correctAnswerText = `Correct verb: ${currentQuestion.correct_answer} (${currentQuestion.english})`;
         } else {
-            message += ` Correct answer: ${currentQuestion.correct_answer}`;
+            correctAnswerText = `Correct answer: ${currentQuestion.correct_answer}`;
         }
+        
+        message += `<div class="correct-answer">${correctAnswerText}</div>`;
         
         // Add hint if available
         if (result.hint) {
-            message += `\n\n${result.hint}`;
+            message += `<div style="margin-top: 8px; font-size: 0.9rem;">${result.hint}</div>`;
         }
     }
     
     // Add tense description if available
     if (result.tense_description && result.tense_name) {
-        message += `\n\n${result.tense_name}: ${result.tense_description}`;
+        message += `<div style="margin-top: 8px; font-size: 0.9rem; font-style: italic;">${result.tense_name}: ${result.tense_description}</div>`;
     }
     
-    feedbackEl.textContent = message;
+    feedbackEl.innerHTML = message;
     feedbackEl.classList.add('show', isCorrect ? 'correct' : 'incorrect');
 }
 
